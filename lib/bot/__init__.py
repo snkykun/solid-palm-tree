@@ -1,3 +1,4 @@
+import os
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from discord.ext.commands import Bot as BotBase
 
@@ -15,9 +16,10 @@ class Bot(BotBase):
         super().__init__(command_prefix=PREFIX, owner_ids=OWNER_IDS)
 
     def run(self, version):
+        print(os.getcwd())
         self.VERSION = version
 
-        with open("solid-palm-tree\lib\bot\lib\bot\token.txt", "r", encoding="utf-8") as tf:
+        with open("./lib/bot/token.0", "r", encoding="utf-8") as tf:
             self.TOKEN = tf.read()
 
         print("running bot...")
